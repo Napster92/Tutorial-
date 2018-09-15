@@ -1,3 +1,34 @@
+
+First watch this - https://www.youtube.com/playlist?list=PLw-IdJ8Ov3wKcP5f1T4YHGSqYeglW7s_n
+
+Read this - https://medium.com/netflix-techblog/how-we-build-code-at-netflix-c5d9bd727f15
+
+Jenkins performance - https://engineering.taboola.com/5-simple-tips-boosting-jenkins-performance/
+
+Jenkind Monitor - https://www.datadoghq.com/blog/monitor-jenkins-datadog/
+
+
+Issue faced
+
+https://thenewstack.io/many-problems-jenkins-continuous-delivery/
+https://electric-cloud.com/plugins/build-automation/
+https://stackoverflow.com/questions/17686751/jenkins-build-issues
+https://openedx.atlassian.net/wiki/spaces/TE/pages/102367626/Troubleshooting+Jenkins+Builds
+https://github.com/gitextensions/gitextensions/issues/4202
+https://developers.redhat.com/blog/2017/06/19/its-tuesday-jenkins-is-down/
+https://serverfault.com/questions/920169/jenkins-build-failing-with-limited-error-output
+
+
+
+
+
+http://www.codespaghetti.com/devops-interview-questions/
+https://codingcompiler.com/jenkins-interview-questions-answers/
+https://www.hcltech.com/blogs/automation-testing-jenkins-game-changer-test-automation
+https://aws.amazon.com/blogs/devops/simplify-your-jenkins-builds-with-aws-codebuild/
+
+
+
 Jenkins best practice
 
 
@@ -40,5 +71,31 @@ node {
 
 
 
+
+
+
+
+
+
+
+
+Jenkins Engineer Role
+
+
+Understand key CI/CD/DevOps and Jenkins concepts, including:
+
+
+The Jenkins script console, CLI and web UI
+Security features, including permissions and roles
+Plugins
+Rest API
+Notifications
+Job and build functionality, including distributed builds
+CI/CD pipeline functionality
+Fingerprints
+Artifacts
+Alerts - be able to troubleshoot problems signaled by:
+Build failure alerts
+Test failure alerts
 
 
