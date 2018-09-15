@@ -1,0 +1,44 @@
+Jenkins best practice
+
+
+1: Every code checkin should have automatic build process.
+
+2: Project pipeline must work
+
+3: Bug fixing at the early stage after any build failure
+
+4: Continous feedback to developer on the project build status -  Failure & static code analysis
+
+5: Copy artificate of each build porcess -- Maintain jar file of each build. -- Post build action - geneating artificate.
+
+6: Default location of each jenkins jobs inside   .jenkins/workspace/ProjectFolderName
+
+7: deploying project on the Tomcat server or docker container on successfull build for QA
+
+8: Each build having set of Junit test case and fuctional test cases which sould be passed 
+
+9: we are using Groovy script for project pipline.
+
+node {
+    stage "Create build output"
+    
+    // Make the output directory.
+    sh "mkdir -p output"
+
+    // Write an useful file, which is needed to be archived.
+    writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
+
+    // Write an useless file, which is not needed to be archived.
+    writeFile file: "output/uselessfile.md", text: "This file is useless, no need to archive it."
+
+    stage "Archive build output"
+    
+    // Archive the build output artifacts.
+    archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
+}
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+cat > geekfile.txt
+unix is great os. unix is opensource. unix is free os.
+learn operating system.
+unix linux which one you choose.
+unix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+
+
+
+1: Replacing or substituting string
+
+sed 's/unix/linux/' geekfile.txt
+
+Two derimit 
+
+It will replace first word of a line  - use  g in the experssion
+this is not permanent -   use  option -i for permanent 
+
+
+By default, the sed command replaces the first occurrence of the pattern in each line and it won’t replace the second, third…occurrence in the line.
+
+
+
+2: Replacing the nth occurrence of a pattern in a line  --- Use the /1, /2 etc flags to replace the 
+
+sed 's/unix/linux/2' geekfile.txt
+
+
+3: Replacing all the occurrence of the pattern in a line
+
+sed 's/unix/linux/g' geekfile.txt
+
+
+4: Replacing from nth occurrence to all occurrences in a line 
+
+ Use the combination of /1, /2 etc and /g
+
+sed 's/unix/linux/3g' geekfile.txt
+
+
+
+5: Parenthesize first character of each word
+
+sed 's/\(\b[A-Z]\)/\(\1\)/g'
+
+
+
+6: Replacing string on a specific line number 
+
+sed '3 s/unix/linux/' geekfile.txt
+
+
+
+
+10: Deleting lines from a particular file
+
+
+Syntax:
+$ sed 'nd' filename.txt
+Example:
+$ sed '5d' filename.txt
+
+
+
+Syntax:
+$ sed 'nth,$d' filename.txt
+Example:
+$ sed '12,$d' filename.txt
+
+
+sed command to delete first line
+
+$ sed ‘1d’ Sed_File.txt
+
+
+
+
+
+
+
+
+

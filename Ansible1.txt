@@ -1,0 +1,95 @@
+Introduction To Ad-Hoc Commands
+
+An ad-hoc command is something that you might type in to do something really quick, but don’t want to save for later.
+
+For instance, if you wanted to power off all of your lab for Christmas vacation, you could execute a quick one-liner in Ansible without writing a playbook.
+
+
+1: Let’s use Ansible’s command line tool to reboot all web servers in Atlanta, 10 at a time
+
+run the command on all servers in a group, in this case, atlanta, in 10 parallel forks:
+
+ansible atlanta -a "/sbin/reboot" -f 10
+
+
+
+2: If you want to run commands as a different user, it looks like this:
+
+ansible atlanta -a "touch file1" -u user1
+
+ansible atlanta -a "mkdir file2" -u user1
+
+
+
+3: File Transfer
+
+ansible atlanta -m copy -a "src=/etc/hosts dest=/tmp/hosts"
+
+
+
+4: The file module allows changing ownership and permissions on files. These same options can be passed directly to the copy module as well:
+
+ ansible atlanta  -m file -a "dest=/tmp/hosts mode=777 owner=user1 group=user1"
+
+
+5: The file module can also create directories, similar to mkdir -p:
+
+ansible atlanta   -m file -a "dest=/tmp/testfolder mode=755 owner=user1  group=user1  state=directory"
+
+
+
+6: As well as delete directories (recursively) and delete files:
+
+ansible atlanta  -m file -a "dest=/tmp/testfolder state=absent"
+
+
+7: Managing Packages
+
+There are modules available for yum and apt. 
+
+7.1 - Ensure a package is installed, but don’t update it:
+
+ ansible atlanta -m yum -a "name=git state=present"
+
+7.2 - Ensure a package is installed to a specific version:
+
+ ansible atlanta -m yum -a "name=vim-2.4 state=present"
+
+7.3 Ensure a package is at the latest version:
+
+ansible atlanta  -m yum -a "name=git state=latest"
+
+
+7.5  Ensure a package is not installed:
+
+ansible atlanta   -m yum -a "name=git state=absent"
+
+
+
+
+user management
+===============
+The 'user' module allows easy creation and manipulation of existing user accounts, as well as removal of user accounts that may exist:
+
+
+ansible atlanta -m user -a "name=user2 password=password@123"
+
+
+
+Delete a user
+
+ansible all -m user -a "name=foo state=absent"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
